@@ -12,8 +12,9 @@ const Navbar = () => {
           <button className="flex items-center justify-center border-r-2 border-[#8a8a8a] px-4">
             <ion-icon style={{fontSize: "28px"}} name="person-outline"></ion-icon>
           </button>
-          <button className="flex items-center justify-center px-4">
+          <button className="flex items-center justify-center px-4 relative">
             <ion-icon style={{fontSize: "28px"}} name="cart-outline"></ion-icon>
+            <p className="absolute bg-yellow-300 text-black text-xs rounded-full py-0.5 px-1.5 flex items-center justify-center -top-1.5 right-2">{0}</p>
           </button>
         </div>
       </div>
