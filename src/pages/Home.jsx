@@ -5,13 +5,36 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import CategoriesCard from "../components/CategoriesCard";
+import CategoriesCard from "../components/home/CategoriesCard";
+import OurProduct from "../components/home/OurProduct";
 
 const Home = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const isInView1 = useInView(ref1);
   const isInView2 = useInView(ref2);
+  const categoriesData = [
+    {
+      image: "light-sofa.webp",
+      title: "Light Sofa",
+    },
+    {
+      image: "study-table.png",
+      title: "Study Table",
+    },
+    {
+      image: "corner-table.png",
+      title: "Corner Table",
+    },
+    {
+      image: "office-chair.webp",
+      title: "Office Chair",
+    },
+    {
+      image: "book-self.png",
+      title: "Book Shelf",
+    }
+  ]
   return (
     <div>
       <Swiper
@@ -127,9 +150,12 @@ const Home = () => {
       <div className="swiper-button-next"></div>
       <div className="swiper-button-prev"></div>
       <div className="swiper-pagination md:mb-8"></div>
-      <div className="flex gap-8 mt-10">
-        <CategoriesCard />
+      <div className="grid grid-cols-5 gap-16 mt-28 px-32">
+        {categoriesData.map((category, index) => (
+          <CategoriesCard key={index} image={category.image} title={category.title} />
+        ))}
       </div>
+      <OurProduct />
     </div>
   );
 };
