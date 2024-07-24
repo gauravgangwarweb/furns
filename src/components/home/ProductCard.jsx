@@ -38,7 +38,7 @@ const ProductCard = ({
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className="bg-[#f2f2f2] w-full h-64 rounded-sm p-6">
+      <div className="bg-[#f2f2f2] w-full h-80 md:h-64 rounded-sm p-6">
         {isHover ? (
           <img
             // ref={imageRef1}

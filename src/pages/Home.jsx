@@ -151,7 +151,7 @@ const Home = () => {
       <div className="swiper-button-next"></div>
       <div className="swiper-button-prev"></div>
       <div className="swiper-pagination md:mb-8"></div>
-      <div className="grid grid-cols-5 gap-16 mt-28 px-32">
+      <div className="hidden md:grid grid-cols-5 gap-16 mt-28 px-32">
         {categoriesData.map((category, index) => (
           <CategoriesCard key={index} image={category.image} title={category.title} />
         ))}
