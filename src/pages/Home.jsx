@@ -7,6 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import CategoriesCard from "../components/home/CategoriesCard";
 import OurProduct from "../components/home/OurProduct";
+import ProductGrid from "../components/home/ProductGrid";
 
 const Home = () => {
   const ref1 = useRef(null);
@@ -156,6 +157,7 @@ const Home = () => {
         ))}
       </div>
       <OurProduct />
+      <ProductGrid />
     </div>
   );
 };
