@@ -8,6 +8,7 @@ import { useRef } from "react";
 import CategoriesCard from "../components/home/CategoriesCard";
 import OurProduct from "../components/home/OurProduct";
 import ProductGrid from "../components/home/ProductGrid";
+import SaleBanner from "../components/home/SaleBanner";
 
 const Home = () => {
   const ref1 = useRef(null);
@@ -158,6 +159,10 @@ const Home = () => {
       </div>
       <OurProduct />
       <ProductGrid />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 px-4 md:px-32 mt-28">
+        <SaleBanner img={"sale-banner-1.webp"} text={"Sale Furniture For Summer"} />
+        <SaleBanner img={"sale-banner-2.webp"} text={"Office Chair For Best Offer"} />
+      </div>
     </div>
   );
 };

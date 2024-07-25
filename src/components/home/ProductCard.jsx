@@ -90,7 +90,7 @@ const ProductCard = ({
       )}
       {discount && (
         <span className="absolute w-10 text-center bg-orange-600 text-white text-[12px] py-0.5 rounded-sm top-10 left-3">
-          {discount}
+          {discount}%
         </span>
       )}
       {soldout && (
