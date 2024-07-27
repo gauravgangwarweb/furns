@@ -9,6 +9,7 @@ import CategoriesCard from "../components/home/CategoriesCard";
 import OurProduct from "../components/home/OurProduct";
 import ProductGrid from "../components/home/ProductGrid";
 import SaleBanners from "../components/home/SaleBanners";
+import FollowUs from "../components/home/FollowUs";
 
 const Home = () => {
   const ref1 = useRef(null);
@@ -160,6 +161,7 @@ const Home = () => {
       <OurProduct />
       <ProductGrid />
       <SaleBanners />
+      <FollowUs />
     </div>
   );
 };
