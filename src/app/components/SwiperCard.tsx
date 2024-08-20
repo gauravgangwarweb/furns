@@ -1,45 +1,24 @@
+"use client";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import CategoriesCard from "../components/home/CategoriesCard";
-import OurProduct from "../components/home/OurProduct";
-import ProductGrid from "../components/home/ProductGrid";
-import SaleBanners from "../components/home/SaleBanners";
-import FollowUs from "../components/home/FollowUs";
 
-const Home = () => {
+interface SwiperCardProps {
+  // Add any props you need for your SwiperCard component
+}
+
+const SwiperCard: React.FC<SwiperCardProps> = (props) => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
-  const isInView1 = useInView(ref1);
-  const isInView2 = useInView(ref2);
-  const categoriesData = [
-    {
-      image: "light-sofa.webp",
-      title: "Light Sofa",
-    },
-    {
-      image: "study-table.png",
-      title: "Study Table",
-    },
-    {
-      image: "corner-table.png",
-      title: "Corner Table",
-    },
-    {
-      image: "office-chair.webp",
-      title: "Office Chair",
-    },
-    {
-      image: "book-self.png",
-      title: "Book Shelf",
-    }
-  ]
+  const isInView1 = useInView(ref1)
+  const isInView2 = useInView(ref2)
+
   return (
-    <div>
+    <div className="bg-[#e8e8e8] relative">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
@@ -47,12 +26,15 @@ const Home = () => {
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
-          clickable: true,
         }}
         modules={[Pagination, Navigation]}
+        className="max-w-[1880px] mx-auto"
       >
         <SwiperSlide>
-          <div ref={ref1} className="w-full bg-[#e8e8e8] grid grid-cols-1 md:grid-cols-2 px-4 md:px-32 py-14 md:py-24">
+          <div
+            ref={ref1}
+            className="w-full bg-[#e8e8e8] grid grid-cols-1 md:grid-cols-2 px-4 md:px-32 py-14 md:py-24"
+          >
             <div className="flex flex-col items-start justify-center">
               <motion.h5
                 className="text-head-color text-base md:text-2xl font-bold md:font-semibold raleway"
@@ -101,7 +83,10 @@ const Home = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div ref={ref2} className="w-full bg-[#e8e8e8] grid grid-cols-1 md:grid-cols-2 px-4 md:px-32 py-14 md:py-24">
+          <div
+            ref={ref2}
+            className="w-full bg-[#e8e8e8] grid grid-cols-1 md:grid-cols-2 px-4 md:px-32 py-14 md:py-24"
+          >
             <div className="flex flex-col items-start justify-center">
               <motion.h5
                 className="text-head-color text-base md:text-2xl font-bold md:font-semibold raleway"
@@ -150,20 +135,11 @@ const Home = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="swiper-button-next"></div>
+      <div className="swiper-button-next absolute top-1/2"></div>
       <div className="swiper-button-prev"></div>
       <div className="swiper-pagination md:mb-8"></div>
-      <div className="hidden md:grid grid-cols-5 gap-16 mt-28 px-32">
-        {categoriesData.map((category, index) => (
-          <CategoriesCard key={index} image={category.image} title={category.title} />
-        ))}
-      </div>
-      <OurProduct />
-      <ProductGrid />
-      <SaleBanners />
-      <FollowUs />
     </div>
   );
 };
 
-export default Home;
+export default SwiperCard;
